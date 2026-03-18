@@ -1,4 +1,4 @@
-# ai-daily
+# ai-daily action
 
 OpenClaw Skill for AI 洞察日报 - 每日自动推送 AI 日报
 
