@@ -1,0 +1,41 @@
+name: Daily AI Insight Push
+
+# 定时每天推送，可根据需要调整 cron 表达式
+# 默认每天 08:00 UTC+8 推送
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  # 支持手动触发
+  workflow_dispatch:
+
+jobs:
+  push:
+    runs-on: ubuntu-latest
+    env:
+      # 在这里配置你的 webhooks，多个空格分隔
+      AI_DAILY_WEBHOOKS: ${{ secrets.AI_DAILY_WEBHOOKS }}
+      # 默认获取条数
+      AI_DAILY_DEFAULT_COUNT: 1
+      # RSS 源不需要改
+      AI_DAILY_RSS_URL: "https://justlovemaki.github.io/CloudFlare-AI-Insight-Daily/rss.xml"
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install feedparser beautifulsoup4
+
+      - name: Run fetch and push
+        run: |
+          chmod +x ./scripts/fetch.sh
+          source ./config.sh
+          ./scripts/fetch.sh
