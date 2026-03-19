@@ -61,7 +61,6 @@ source ~/.openclaw/skills/ai-daily/config.sh
 - DeepMind 扩容蛋白质复合物数据库。
 - AI 通过新框架自主进化出社会规则。
 
-> 完整内容：https://ai.hubtoday.app//2026-03/2026-03-18/
 ```
 
 ## 信息来源
