@@ -16,7 +16,7 @@ fi
 RSS_URL=${AI_DAILY_RSS_URL:-"https://justlovemaki.github.io/CloudFlare-AI-Insight-Daily/rss.xml"}
 
 # Python 解析 RSS 并输出
-python3 << 'EOF'
+python3 << EOF
 import feedparser
 import urllib.request
 import os
