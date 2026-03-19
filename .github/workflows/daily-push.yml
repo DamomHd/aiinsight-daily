@@ -1,10 +1,10 @@
 name: Daily AI Insight Push
 
 # 定时每天推送，可根据需要调整 cron 表达式
-# 默认每天 08:00 UTC+8 推送
+# 默认每天 10:00 UTC+8 推送
 on:
   schedule:
-    - cron: '0 0 * * *'
+    - cron: '2 0 * * *'
   # 支持手动触发
   workflow_dispatch:
 

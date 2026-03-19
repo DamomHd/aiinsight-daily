@@ -65,7 +65,6 @@ if len(articles) == 1:
         for item in items:
             output.append(f"- {item}")
         output.append("")
-    output.append(f"> 完整内容：{link}")
 else:
     output.append("**AI 洞察日报 :**\n")
     for i, (title, link, _) in enumerate(articles, 1):
